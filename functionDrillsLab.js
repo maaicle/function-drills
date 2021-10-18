@@ -99,9 +99,22 @@ let nameGreeting = nameCheck('Kevin');
 */
 
 //CODE HERE
+function faveColorfinder(color) {
+  color = String(color);
+  if (color === 'red') {
+    return 'red is a great color';
+  } else if (color === 'green') {
+    return 'green is a solid favorite color'
+  } else if (color === 'black') {
+    return 'so trendy'
+  } else {
+    return `you need to evaluate your favorite color choice`
+  }
+}
+let colorRating = faveColorfinder('blue');
+// console.log(colorRating);
 
-
-////////////////// PROBLEM 7 ////////////////////
+///////////////// PROBLEM 7 ////////////////////
 let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 /*
   Create a function called printAllNames that takes in a single argument (an array of names).
@@ -110,18 +123,33 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
+function printAllNames(arr) {
+  for (i = 0; i < arr.length; i++) {
+    console.log(arr[i])
+  }
+};
 
+// printAllNames(namesArr);
 
 ////////////////// PROBLEM 8 ////////////////////
 /*
   Create a function called thatsOdd that takes in a single argument (a number).
   Using conditional logic, if the number is even, return 'That's not odd!'
   Otherwise, return 'That is odd indeed!'
-  Outside the function, create a variable called `oddChecker` and set it equal to your function invoked, making sure to pass in an argument.
+  Outside the function, create a variable called `oddChecker` and set it equal to your function invoked, 
+  making sure to pass in an argument.
 */
 
 //CODE HERE
-
+function thatsOdd(num) {
+  if (num % 2 === 0) {
+    return `That's not odd`;
+  } else if (num % 2 !== 0) {
+    return 'That is odd indeed!'
+  }
+}
+oddChecker = thatsOdd(76);
+console.log(oddChecker);
 
 ////////////////// PROBLEM 9 ////////////////////
 let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
@@ -135,6 +163,20 @@ let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
 */
 
 //CODE HERE
+function bigOrSmall(arr) {
+  let answers = [];
+  for (i = 0; i < arr.length; i++) {
+    if (arr[i] > 100) {
+      answers.push('big');
+    } else if (arr[i] <= 100) {
+      answers.push('small');
+    }
+  }
+  return answers;
+};
+
+let arrayEvaluator = bigOrSmall(bigOrSmallArray);
+console.log(arrayEvaluator);
 
 
 ////////////////// PROBLEM 10 ////////////////////
