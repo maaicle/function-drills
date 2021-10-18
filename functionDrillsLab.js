@@ -149,7 +149,7 @@ function thatsOdd(num) {
   }
 }
 oddChecker = thatsOdd(76);
-console.log(oddChecker);
+// console.log(oddChecker);
 
 ////////////////// PROBLEM 9 ////////////////////
 let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
@@ -176,29 +176,45 @@ function bigOrSmall(arr) {
 };
 
 let arrayEvaluator = bigOrSmall(bigOrSmallArray);
-console.log(arrayEvaluator);
+// console.log(arrayEvaluator);
 
 
 ////////////////// PROBLEM 10 ////////////////////
 let contestants = ['Katniss', 'Peeta', 'Fox-face', 'Glimmer', 'Cato', 'Rue', 'Thresh', 'Clove', 'Marvel']
 let loser = 'Glimmer'
 /*
-  Write a function that is called theEliminator, which takes in two arguments, contestants (which will each be an array of strings), and loser (which will be a string).
-  The function should loop over the array of contestant names. If the loser string appears in the array, splice it out. Return the new contestants array.
+  Write a function that is called theEliminator, which takes in two arguments, contestants 
+  (which will each be an array of strings), and loser (which will be a string).
+  The function should loop over the array of contestant names. If the loser string appears in the array, 
+  splice it out. Return the new contestants array.
 */
 
 //CODE HERE
+function theEliminator(contestants, loser) {
+  // let noLosers = contestants;
+  for (i = 0; i < contestants.length; i++) {
+    if (contestants[i] === loser) {
+      contestants.splice(contestants[i], 1);
+    }
+  }
+  return contestants
+}
 
+// console.log(theEliminator(contestants, loser));
 
 ////////////////// PROBLEM 11 ////////////////////
 let sampleString = "Hi, my name is Kylo."
 /*
-  Write a function that takes in one argument, a string. The function should then console.log that string, in entirely uppercase characters.
+  Write a function that takes in one argument, a string. The function should then console.log that string, 
+  in entirely uppercase characters.
   Invoke the function, passing in the sampleString (above).
 */
 
 //CODE HERE
-
+function makeUpper(stringToUp) {
+  console.log(stringToUp.toUpperCase())
+}
+// makeUpper(sampleString);
 
 ////////////////// PROBLEM 12 ////////////////////
 /*
@@ -211,31 +227,80 @@ let sampleString = "Hi, my name is Kylo."
   return 'must provide a valid email address'
 */
 
+//CODE HERE
+function emailCheck(email) {
+  email = String(email);
+  if (email.includes('@')) {
+    return 'email verified'
+  } else {
+    return 'must provide a valid email address'
+  }
+}
+
+// console.log(emailCheck('maaicle@gmail.com'));
+
 ////////////////// PROBLEM 13 ////////////////////
 /*
-  Write a function, naming it whatever you believe to be appropriate, that buys as many chocolate frogs as possible with a certain amount of gold. Each chocolate frog costs 3 gold. Your function should take in a single parameter, which is the amount of gold you are willing to spend. Your function should return a total amount of chocolate frogs you were able to purchase.
-  Create a variable called `totalFrogs` and set it equal to your function invoked, passing in the amount of gold you are willing to spend.
+  Write a function, naming it whatever you believe to be appropriate, 
+  that buys as many chocolate frogs as possible with a certain amount of gold. 
+  Each chocolate frog costs 3 gold. Your function should take in a single parameter, 
+  which is the amount of gold you are willing to spend. 
+  Your function should return a total amount of chocolate frogs you were able to purchase.
+  Create a variable called `totalFrogs` and set it equal to your function invoked, 
+  passing in the amount of gold you are willing to spend.
 */
 
 //CODE HERE
+function frogulator(frogGold) {
+  return frogGold / 3;
+}
 
+// myFrogGold = 4;
+// let totalFrogs = frogulator(myFrogGold);
+// console.log(`You have ${myFrogGold} Frog Gold which will get you ${totalFrogs} chocolate frogs`);
 
 ////////////////// PROBLEM 14 ////////////////////
 /*
-  You might have noticed a slight bug in problem 12. If you were to pass in 4 gold, the function would return to you 1.3333... However, you can't really go to a store and by 1.333 products. You would just be able to purchase 1 product. Re-write the function you used in problem 12 (give it the same name, just add a 2 to the end of it) that fixes this bug. Invoke the function and store the returned value to a variable called `totalFrogs2`.
+  You might have noticed a slight bug in problem 12. If you were to pass in 4 gold, 
+  the function would return to you 1.3333... However, you can't really go to a store and by 1.333 products. 
+  You would just be able to purchase 1 product. Re-write the function you used in problem 12 
+  (give it the same name, just add a 2 to the end of it) that fixes this bug. 
+  Invoke the function and store the returned value to a variable called `totalFrogs2`.
 */
 
 //CODE HERE
+function frogulator2(frogGold) {
+  return parseInt(frogGold / 3); //Added parse int to return only the integer.
+}
 
+myFrogGold = 4;
+let totalFrogs = frogulator2(myFrogGold);
+// console.log(`You have ${myFrogGold} Frog Gold which will get you ${totalFrogs} chocolate frogs`);
 
 ////////////////// PROBLEM 15 ////////////////////
 let sampleArray = [0,1,2,3,4,7,5,6,8,9]
+let sampleArray2 = [0,1,2,3,4,5,6,7,8,9]
 /*
-  Write a function that takes in an array of numbers as an argument. In the body of the function, write logic to determine if the array is in ascending order. The function should return true, if it is sorted in ascending order, false if it is not. Create a variable, `arrayIsAscending` and set it equal to your function invoked. Use the sample array to test this function.
+  Write a function that takes in an array of numbers as an argument. In the body of the function, 
+  write logic to determine if the array is in ascending order. The function should return true, 
+  if it is sorted in ascending order, false if it is not. 
+  Create a variable, `arrayIsAscending` and set it equal to your function invoked. 
+  Use the sample array to test this function.
 */
 
 //CODE HERE
+function isAscending(arr) {
+  let isArrayAscending = true;
+  for (i = 0; i < arr.length; i++) {
+    if (arr[i] > arr[i + 1]) {
+      isArrayAscending = false;
+    }
+    console.log (arr[i], arr[i + 1], isArrayAscending);
+  }
+  return isArrayAscending;
+};
 
+// console.log(isAscending(sampleArray2));
 
 ////////////////// PROBLEM 16 ////////////////////
 
@@ -255,17 +320,18 @@ function pond() {
 /*
   There are 4 variables above: duck, rubberDuck, sailorDuck and realDuck.
   All within different scopes.
-  Given the functions and variables above, edit the arrays below to contain only the appropriate variable names (as strings).
+  Given the functions and variables above, edit the arrays below to contain only the appropriate variable names 
+  (as strings).
 */
 
 //This array should contain the variable names (as strings) accessible in the global scope.
-let globalScope = []
+let globalScope = ['duck']
 
 //This array should contain the variable names (as strings) accessible in the bathroom function.
-let bathroomScope = []
+let bathroomScope = ['duck', 'rubberDuck']
 
 //This array should contain the variable names (as strings) accessible in the bathtub function.
-let bathtubScope = []
+let bathtubScope = ['duck', 'rubberDuck', 'sailorDuck']
 
 //This array should contain the variable names (as strings) accessible in the pond function.
-let pondScope = []
+let pondScope = ['duck', 'realDuck']
