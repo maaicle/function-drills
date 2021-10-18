@@ -5,7 +5,11 @@
 */
 
 //CODE HERE
+function helloWorld() {
+  // console.log('Hello, World!');
+};
 
+helloWorld();
 
 ////////////////// PROBLEM 2 ////////////////////
 /*
@@ -15,7 +19,10 @@
 */
 
 //CODE HERE
-
+function printName(name) {
+  // console.log(name);
+};
+printName('Michael');
 
 ////////////////// PROBLEM 3 ////////////////////
 /*
@@ -29,30 +36,57 @@
 */
 
 //CODE HERE
+function greeting(name) {
+  name = String(name);
+  // console.log(`Hello, ${name}`);
+};
 
+greeting('Michael');
 
 ////////////////// PROBLEM 4 ////////////////////
 /*
   Create a function called add that takes in two parameters 
   Inside, convert the arguments to be numbers (just in case strings get sent in)
   The add function should RETURN the two parameters added together.
-  Create a variable outside the function called 'sum' and set it equal to add invoked (called), passing in 2 arguments.
+  Create a variable outside the function called 'sum' and set it equal to add invoked (called), 
+  passing in 2 arguments.
 */
 
 //CODE HERE
+function add(num1, num2) {
+  num1 = parseInt(num1);
+  num2 = parseInt(num2);
+  // console.log(num1, num2);
+  return num1 + num2
+};
 
+let sum = add('3', '4th');
+// console.log(sum);
 
 ////////////////// PROBLEM 5 ////////////////////
 /*
   Write a function called nameCheck that takes in a name parameter.
   nameCheck should check if the name equals 'Steven'. If it does, return 'What is up Steven?'
   If the name parameter is equal to Bryan, return 'Hey Bryan!'
-  If the name parameter is anything else, return 'Cool name, NAMEPARAM' (with NAMEPARAM being the value of the name parameter being passed in).
+  If the name parameter is anything else, return 'Cool name, NAMEPARAM' (with NAMEPARAM being the value of the 
+  name parameter being passed in).
   Create a variable called 'nameGreeting' and set it equal to your function invoked (called) passing in an argument.
 */
 
 //CODE HERE
+function nameCheck(name) {
+  name = String(name);
+  if(name === 'Steven') {
+    return 'What is up Steven?';
+  } else if (name === 'Bryan') {
+    return 'Hey Bryan!';
+  } else {
+    return `Cool name, ${name}`;
+  }
+};
 
+let nameGreeting = nameCheck('Kevin');
+// console.log(nameGreeting);
 
 ////////////////// PROBLEM 6 ////////////////////
 /*
